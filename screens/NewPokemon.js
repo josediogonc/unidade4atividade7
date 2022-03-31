@@ -18,6 +18,7 @@ const NewPokemon = () => {
     const [isFlyingSelected, setFlyingSelection] = useState(false);
     const [isPoisonSelected, setPoisonSelection] = useState(false);
     const [isGroundSelected, setGroundSelection] = useState(false);
+    const [isGrassSelected, setGrassSelection] = useState(false);
     const [isRockSelected, setRockSelection] = useState(false);
 
     const navigation = useNavigation();
@@ -46,6 +47,7 @@ const NewPokemon = () => {
         if(isPoisonSelected) types.push("Poison")
         if(isRockSelected) types.push("Rock")
         if(isWaterSelected) types.push("Water")
+        if(isGrassSelected) types.push("Grass")
         return types
     }
 
@@ -143,6 +145,17 @@ const NewPokemon = () => {
                         style={styles.checkbox}
                     />
                     Rock
+                </Title>
+            </View>
+
+            <View style={styles.typeItem}>
+                <Title>
+                    <CheckBox
+                        value={isGrassSelected}
+                        onValueChange={setGrassSelection}
+                        style={styles.checkbox}
+                    />
+                    Grass
                 </Title>
             </View>
 
